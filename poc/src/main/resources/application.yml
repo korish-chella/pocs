@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: korish
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console.enabled: true
+  main:
+    allow-bean-definition-overriding: true
+  thymeleaf:
+    cache: 'false'  
+    
+server:
+  port: 8091
+  error:
+    whitelabel:
+      enabled: false
+  ssl:
+    enabled: true
+    key-alias: spring   
+    key-store: classpath:saml/keystore.jks
+    key-store-password: secret
+
+security:
+  saml2:
+    metadata-url: https://dev-19213116.okta.com/app/exk5cglcftx1CDAt05d7/sso/saml/metadata
+      
+# App Properties
+poc:
+  app:
+    jwtSecret: pocSecretKey
+    jwtExpirationMs: 1800000   
+    jwtRefreshExpirationMs: 86400000
+    
+#okta:
+ # oauth2:
+   # issuer: https://dev-19213116.okta.com/oauth2/default
+   # clientId: 0oa5cf4cxnqDdiIqj5d7
+   # clientSecret: WErZLgcGvzoTuNnqdA7bUsCOmNKHLv6p7mYO2Qeh
+    
+    

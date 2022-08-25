@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS COUNTRIES;  
+CREATE TABLE COUNTRIES (
+    id int PRIMARY KEY,
+    name varchar(255)
+);
+
+DROP TABLE IF EXISTS ROLES;  
+CREATE TABLE ROLES (
+    id int PRIMARY KEY,
+    name varchar(255)
+);
